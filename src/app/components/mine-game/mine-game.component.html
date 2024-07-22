@@ -1,0 +1,21 @@
+<div class="game">
+    <div class="header">
+	<div class="counter">{{boardInfo.totalMines - flaggedCount}}</div>
+	<div class="spacer"></div>
+	<div class="timer">{{timeElapsed}}</div>
+    </div>
+    <div class="game">
+	@for (x of [].constructor(boardInfo.totalRows); track $index; let row = $index) {
+	<div class="row">
+	    @for(y of [].constructor(boardInfo.totalCols); track $index; let col = $index) {
+	    <app-mine-cell
+		[row]="row" [col]="col"
+		(onExpose)="onExpose($event)"
+		(onFlagged)="onFlagged($event)"
+	    >
+	    </app-mine-cell>
+	    }
+	</div>
+	}
+    </div>
+</div>

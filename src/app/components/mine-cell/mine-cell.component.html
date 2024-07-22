@@ -1,0 +1,12 @@
+<div (click)="onClick();" [ngClass]="{ 'exposed': exposed, 'fatal': fatal}" (contextmenu)="onContextMenu()" >
+    @if (exposed) {
+    @if (mined) {
+    <fa-icon [icon]="faLandMineOn"></fa-icon>
+    } @else if (neighbors > 0) {
+    <fa-icon [class]="class" [icon]="faNb" ></fa-icon>
+    }
+    } @else if (flagged) {
+    <fa-icon [icon]="faFlag"></fa-icon>
+    }
+</div>
+

@@ -1,0 +1,43 @@
+:host {
+    margin: 50px;
+    display: flex;
+}
+
+.header {
+    height: auto;
+    width: 100%;
+    padding: 5px;
+    line-height: 50px;
+    font-size: 200%;
+    line-height: 50px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.game {
+    margin: auto;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.counter {
+    text-align: end;
+    border: 2px solid darkgreen;
+    padding: 0 5px;
+    color: red;
+    flex-basis: 60px;
+}
+
+.timer {
+    text-align: end;
+    border: 2px solid black;
+    padding: 0 5px;
+    color: red;
+    flex-basis: 60px;
+}
+
+.row {
+    display: flex;
+}

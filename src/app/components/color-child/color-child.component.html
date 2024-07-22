@@ -1,0 +1,20 @@
+<h2>Choose Brand Colors:</h2>
+
+<div class="container">
+    <color-sample
+	[color]="primary"
+		 #primaryColorSample
+	(click)="onClick();"
+    >
+    </color-sample>
+    <form class="example-form">
+	<mat-form-field class="example-full-width">
+	    <mat-label>Primary Color</mat-label>
+	    <input matInput #primaryInput name="primary"
+		   type="color"
+		   cpPosition="bottom"
+		   [(ngModel)]="primary"
+	    />
+	</mat-form-field>
+    </form>
+</div>
