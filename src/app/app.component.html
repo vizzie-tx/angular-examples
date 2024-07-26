@@ -1,4 +1,4 @@
-<div class="top mat-app-background">
+<div class="top mat-app-background" [class.dark-theme]="isDarkTheme | async">
     <mat-toolbar  class="navbar mat-accent">
 	<button mat-icon-button mat-primary
 	    aria-label="Example icon button with a menu icon"
@@ -22,6 +22,11 @@
 	<div mat-div class="navitem"><a routerLink="{{demo.path}}">{{demo.name}}</a> </div>
 	}
 	-->
+	<span class="spacer"></span>
+	<mat-slide-toggle [checked]="isDarkTheme | async"
+			  (change)="onToggleDarkMode($event.checked);">
+            Dark Mode
+	</mat-slide-toggle>
     </mat-toolbar>
     <router-outlet />
 

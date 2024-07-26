@@ -4,28 +4,52 @@
 @include mat.strong-focus-indicators();
 
 // Note: Color palettes are generated from primary: #ffccff
-$dark-theme: mat.define-theme((
+$light-theme: mat.define-theme((
   color: (
-    theme-type: dark,
+    theme-type: light,
     primary: mat.$magenta-palette,
     tertiary: mat.$violet-palette,
   ),
 ));
 
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$cyan-palette,
+    tertiary: mat.$orange-palette,
+  ),
+));
+
 html {
-    mat.$theme-ignore-duplication-warnings: true;
-    @include mat.core-theme($dark-theme);
-    @include mat.button-theme($dark-theme);
-    @include mat.icon-theme($dark-theme);
-    @include mat.menu-theme($dark-theme);
-    @include mat.toolbar-theme($dark-theme);
-    @include mat.select-theme($dark-theme);
-    @include mat.card-theme($dark-theme);
-    @include mat.form-field-theme($dark-theme);
-    @include mat.strong-focus-indicators-theme($dark-theme);
+    @include mat.core-theme($light-theme);
+    @include mat.button-theme($light-theme);
+    @include mat.icon-theme($light-theme);
+    @include mat.menu-theme($light-theme);
+    @include mat.toolbar-theme($light-theme);
+    @include mat.select-theme($light-theme);
+    @include mat.card-theme($light-theme);
+    @include mat.form-field-theme($light-theme);
+    @include mat.slide-toggle-theme($light-theme);
+    @include mat.strong-focus-indicators-theme($light-theme);
+
+    @include my-cards.my-cards-theme($light-theme);
+    @include navbar.navbar-theme($light-theme);
+}
+
+.dark-theme {
+    @include mat.core-color($dark-theme);
+    @include mat.button-color($dark-theme);
+    @include mat.icon-color($dark-theme);
+    @include mat.menu-color($dark-theme);
+    @include mat.toolbar-color($dark-theme);
+    @include mat.select-color($dark-theme);
+    @include mat.card-color($dark-theme);
+    @include mat.form-field-color($dark-theme);
+    @include mat.slide-toggle-color($dark-theme);
+    @include mat.strong-focus-indicators-color($dark-theme);
+    
     @include my-cards.my-cards-theme($dark-theme);
     @include navbar.navbar-theme($dark-theme);
 }
 
-@include mat.color-variants-backwards-compatibility($dark-theme);
 
