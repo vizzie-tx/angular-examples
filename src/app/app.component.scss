@@ -1,17 +1,32 @@
+@use '@angular/material' as mat;
+@import '../m3-theme.scss';
 
-mat-toolbar {
+.top {
+    display:flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-mat-toolbar span {
-    padding-right: 2em;
+.spacer {
+    flex-grow: 1;
 }
 
-mat-toolbar a {
+.footer {
+    align-self: flex-end;
+}
+
+.navbar > div {
+    padding: 0 5px;
+}
+
+a {
+    //color: $navfg;
     text-decoration: none;
-    color: #ccccff;
 }
 
-mat-toolbar a :visited {
-    text-decoration: none;
-    color: #ccccff;
+
+a:visited {
+    //color: $navfg;
+    /* color: #cc88ff; */
 }
+

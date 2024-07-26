@@ -1,7 +1,30 @@
-<mat-toolbar>
-    <span>Demos</span>
-    <span><a routerLink="color">Color</a> </span>
-    <span><a routerLink="mines">Mines</a></span>
-    <span><a routerLink="projection">Projection</a></span>
-</mat-toolbar>
-<router-outlet />
+<div class="top mat-app-background">
+    <mat-toolbar  class="navbar mat-accent">
+	<button mat-icon-button mat-primary
+	    aria-label="Example icon button with a menu icon"
+			[matMenuTriggerFor]="menu"
+			#menuTrigger="matMenuTrigger"
+			(mouseover)="menuTrigger.openMenu()"
+	>
+            <mat-icon>menu</mat-icon>
+        </button>
+	<mat-menu #menu="matMenu" [overlapTrigger]="false">
+	    <span (mouseleave)="menuTrigger.closeMenu();">
+		@for (demo of demos; track demo.path) {
+		<button mat-menu-item routerLink="{{demo.path}}">
+		    {{demo.name}}</button>
+		}
+	    </span>
+	</mat-menu>
+	<div mat-div class="navtitle">Demos</div>
+	<!--
+	@for (demo of demos; track demo.path) {
+	<div mat-div class="navitem"><a routerLink="{{demo.path}}">{{demo.name}}</a> </div>
+	}
+	-->
+    </mat-toolbar>
+    <router-outlet />
+
+    <div class="spacer"></div>
+</div>
+

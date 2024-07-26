@@ -1,9 +1,10 @@
 import { Component, ElementRef, ContentChild, AfterContentInit } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-my-cards',
   standalone: true,
-  imports: [],
+  imports: [MatCardModule],
   templateUrl: './my-cards.component.html',
   styleUrl: './my-cards.component.scss'
 })
@@ -15,10 +16,6 @@ export class MyCardsComponent implements AfterContentInit{
     };
 
     ngAfterContentInit() {
-	this.cardHeaderData.nativeElement.style.color = 'blue';
-	this.cardHeaderData.nativeElement.style.backgroundColor =
-	    'yellow';
-	this.cardHeaderData.nativeElement.style.fontSize = '24px';
 	console.log(this.cardHeaderData);
     }
 }

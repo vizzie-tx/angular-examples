@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+
+@mixin my-cards-theme($theme) {
+    app-my-cards mat-card-header {
+	background-color: mat.get-theme-color($theme, primary-container);;
+	color: mat.get-theme-color($theme, primary);
+    }
+}

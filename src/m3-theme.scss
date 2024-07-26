@@ -1,0 +1,31 @@
+@use '@angular/material' as mat;
+@use './app/components/my-cards/_my-cards.theme.scss' as my-cards;
+@use './app/_navbar-theme.scss' as navbar;
+@include mat.strong-focus-indicators();
+
+// Note: Color palettes are generated from primary: #ffccff
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$magenta-palette,
+    tertiary: mat.$violet-palette,
+  ),
+));
+
+html {
+    mat.$theme-ignore-duplication-warnings: true;
+    @include mat.core-theme($dark-theme);
+    @include mat.button-theme($dark-theme);
+    @include mat.icon-theme($dark-theme);
+    @include mat.menu-theme($dark-theme);
+    @include mat.toolbar-theme($dark-theme);
+    @include mat.select-theme($dark-theme);
+    @include mat.card-theme($dark-theme);
+    @include mat.form-field-theme($dark-theme);
+    @include mat.strong-focus-indicators-theme($dark-theme);
+    @include my-cards.my-cards-theme($dark-theme);
+    @include navbar.navbar-theme($dark-theme);
+}
+
+@include mat.color-variants-backwards-compatibility($dark-theme);
+

@@ -1,10 +1,16 @@
-<app-my-cards>
-    <div #header ngProjectAs='header'>Card Header</div>
-    <span id='card-sub-header'>Card Sub Header</span>
-    <div class="card-body">
-	This is a card Body!!!
-    </div>
-    <footer title="card-footer">
-	Card Footer.
-    </footer>
-</app-my-cards>
+<div class="container">
+    <app-my-cards>
+	<div #header ngProjectAs='header'>Card Header</div>
+	<span id='card-sub-header'>Card Sub Header</span>
+	<div class="card-body">
+	    This is a card Body!!!
+	</div>
+	<footer title="card-footer">
+	    Card Footer.
+	</footer>
+    </app-my-cards>
+    <app-my-cards>
+	<header>Another Card</header>
+	<div class="card-body">This is my body. There are many like it but this one is mine. Without me, my body is useless. Without my body, I am museless.</div>
+    </app-my-cards>
+</div>
